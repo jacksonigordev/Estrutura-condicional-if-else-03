@@ -1,0 +1,42 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Globalization;
+
+namespace Estrutura_Condicional_if_else_03
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+
+            Console.WriteLine("----------- Compra Online ----------");
+            Console.WriteLine("Digite o seu nome: ");
+            string nome = Console.ReadLine();
+            Console.Write("Digite seu saldo: ");
+            double saldo = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+            Console.WriteLine("----------- Dados Produt ----------");
+            Console.WriteLine();
+            Console.Write("Digite o nome do produto: ");
+            string nomeProduto = Console.ReadLine();
+            Console.Write("Digite o valor do produto: ");
+            double valorProduto = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+            double saldoFinal = saldo - valorProduto;
+            bool compraRealizada = saldoFinal >= 0;
+            Console.WriteLine("--------------- Log ---------------");
+
+            if (compraRealizada) 
+            {
+                Console.WriteLine("Compra realizada com sucesso!");
+            }
+            else
+            {
+                Console.WriteLine("A compra não foi realizada.");
+            }
+
+            Console.ReadKey();
+        }
+    }
+}
